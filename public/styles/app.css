@@ -1,9 +1,17 @@
 @import "form.css";
 @import "alert.css";
 @import "header.css";
+@import "input.css";
 
 :root {
     --header-height: 3rem;
+
+    --brand-color: #4CAF50;
+
+    --grey-5: #f0f0f0;
+    --grey-10: #e0e0e0;
+    --grey-20: #d0d0d0;
+    --grey-30: #c0c0c0;
 }
 
 @keyframes fade-in {

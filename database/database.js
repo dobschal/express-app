@@ -2,7 +2,7 @@ import Database from 'better-sqlite3'
 import fs from 'fs'
 import path from 'path'
 
-const db = new Database(path.resolve('database/data/database.db'))
+const db = new Database(path.resolve('./database/data/database.db'))
 db.pragma('journal_mode = WAL')
 
 db.prepare(`
@@ -13,13 +13,13 @@ db.prepare(`
     )
 `).run()
 
-fs.readdirSync(path.resolve('database/migrations')).forEach((file) => {
+fs.readdirSync(path.resolve('./database/migrations')).forEach((file) => {
     const filename = file.split('.').slice(0, -1).join('.')
-    const exists = db.prepare('SELECT COUNT(*) FROM migration WHERE filename = ?').get(filename)
-    if (exists) {
+    const {count} = db.prepare('SELECT COUNT(*) as count FROM migration WHERE filename = ?').get(filename)
+    if (count > 0) {
         return console.info(`🧘‍♂️Migration ${filename} already applied`)
     }
-    const sql = fs.readFileSync(path.resolve(`database/migrations/${file}`), 'utf-8')
+    const sql = fs.readFileSync(path.resolve(`./database/migrations/${file}`), 'utf-8')
     db.exec(sql)
     db.prepare('INSERT INTO migration (filename) VALUES (?)').run(filename)
     console.info(`✅ Migration ${filename} applied`)

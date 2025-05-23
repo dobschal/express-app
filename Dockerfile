@@ -9,7 +9,11 @@ COPY package.json ./
 
 RUN npm install
 
-COPY . .
+COPY app.js .
+COPY database ./database
+COPY public ./public
+COPY views ./views
+COPY routes ./routes
 
 EXPOSE 3000
 

@@ -1,0 +1,30 @@
+label {
+    display: block;
+    line-height: 0;
+    text-shadow: 2px 2px 2px white;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 0 0 0.5rem;
+}
+
+label:focus-within {
+    line-height: 1rem;
+}
+
+label input {
+    display: block;
+    width: 100%;
+    border: 1px var(--grey-10) solid;
+    border-radius: 0.25rem;
+    background: white;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: -0.5rem;
+}
+
+label input::placeholder {
+    font-size: 0;
+    line-height: 0;
+}
