@@ -1,0 +1,13 @@
+.alert {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #3b3b3b;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.alert-danger {
+    background-color: #f44336;
+}

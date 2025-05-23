@@ -1,0 +1,17 @@
+<h1>Users Page</h1>
+<ul>
+    <% for(let user of users) { %>
+        <li class="fade-in"><%= user.name %></li>
+    <% } %>
+</ul>
+
+<!-- TODO: Make the users list sortable by drag and drop -->
+
+<form action="/users">
+    <label>
+        User Name:
+        <input type="text" name="name" placeholder="Enter user name" required>
+    </label>
+    <button>Add User</button>
+    <div class="loading-indicator">Is Loading</div>
+</form>

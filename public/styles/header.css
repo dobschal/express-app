@@ -1,0 +1,24 @@
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+header a:link,
+header a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}

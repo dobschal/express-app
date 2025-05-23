@@ -1,0 +1,5 @@
+/.DS_Store
+/.idea
+/node_modules
+/express-app.iml
+/database/.DS_Store
